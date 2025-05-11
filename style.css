@@ -172,14 +172,17 @@ body{
   
  }
 
- .footer_table ,td,th{
+ td,th{
   border: 1px solid black;
-  border-collapse: collapse;
+  /* border-collapse: collapse; */
+  border-top: none;
+  border-bottom: none;
 
  }
  .footer_table{
   justify-self: center;
-  
+  border:none;
+  border-collapse: collapse;
   margin-top: 2.5%;
   
   size: fit-content;
@@ -191,7 +194,17 @@ body{
   height: 20px;
   width:220px;
  }
- .table_qlink a{
+ .table_qlink1 {
+  border-left: none;
+ }
+ th{
+  border-left: none;
+ }
+ .table_complaints{
+  border-right: none;
+ }
+
+ .table_qlink1 a,.table_qlink2 a{
   text-decoration: none;
   cursor: pointer;
  }
