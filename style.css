@@ -5,7 +5,7 @@ body{
 /* 1st part of index page */
  .prt1index{
    
-   
+   position: relative;
    animation: slideshow 15s infinite;
    background-size: cover;
    /* background-repeat: none; */
@@ -31,6 +31,7 @@ body{
     margin: 0px 50px 50px ;
     border-radius: 20px;
     transform: translateY(30px);
+    
  }
  .logo{
     
@@ -56,17 +57,51 @@ body{
     
  }
  .prt1box{
-   background-color:rgba(0, 0, 0, 0.7);
+  
    box-shadow:0 4px 20px rgba(0, 0, 0, 0.5);
-   border: 1px solid rgba(255, 255, 255, 0.2);
-   color: white;
-   height: 100px;
-   width: 370px;
-   border-radius: 10px;
-   transform: translate3d(300%,300%,0);
+  
+   position:absolute;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   overflow: hidden;
+   border-radius: 16px;
    
-   
- }
+  
+   height: 60px;
+   width: 170px;
+   /* border-radius: 10px; */
+   right: 60px;
+   bottom: 120px;
+  }
+
+  .prt1box::before{
+    content: '';
+    position: absolute;
+    height: 40px;
+    /* border-radius: 14px; */
+   width: 170px;
+    background: linear-gradient(#ff00c8,#6aff00);
+    animation: animate 3s linear infinite;
+    
+  }
+
+  .prt1box::after{
+    content: '';
+    position: absolute;
+    inset: 4px;;
+    background: #141414;
+    border-radius: 16px;
+  }
+
+  @keyframes animate{
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(360deg);}
+  }
+
+  
+
+ 
  .prt1box h1{
    font-weight: 900; 
     font-size: 200%;
@@ -104,12 +139,13 @@ body{
  }
 
  .blockB{
-   background-color:#FFFACD;
-   box-shadow:0 4px 20px rgba(0, 0, 0, 0.5);
+   background-color:rgba(0, 0, 0, 0.5);
+   box-shadow:0 4px 20px rgba(255, 250, 205, 0.5);
    height: 450px;
    width: 450px;
    border-radius: 8px;
  }
+ 
  .blockC{
    background-color:transparent;
    display:flex;
@@ -118,13 +154,29 @@ body{
    height: 550px;
    justify-content: space-evenly;
  }
+ 
  .servicebox{
-   background-color:	#FFFACD;
-   box-shadow:0 4px 20px rgba(0, 0, 0, 0.5);
+   /* background-color:	#FFFACD; */
+   background-color:rgba(0, 0, 0, 0.5);
+   box-shadow:0 4px 20px rgba(255, 250, 205, 0.5);
    height: 179px;
    width: 179px;
    border-radius: 6px;
  }
+
+
+ .servicebox:hover{
+  
+  animation: rotatey 800ms ease-in;
+  background:
+            linear-gradient( rgba(255, 250, 205, 0.8));
+
+ }
+
+ @keyframes rotatey {
+  100% {transform: rotateY(180deg);}
+ }
+ 
 
  /* section 3 in index css */
  .prt3index{
@@ -177,11 +229,14 @@ body{
   /* border-collapse: collapse; */
   border-top: none;
   border-bottom: none;
+    padding: 8px;
+  height: 20px;
+  width:220px;
 
  }
  .footer_table{
   justify-self: center;
-  border:none;
+  /* border:none; */
   border-collapse: collapse;
   margin-top: 2.5%;
   
@@ -189,11 +244,6 @@ body{
  }
  
 
- td,th{
-  padding: 8px;
-  height: 20px;
-  width:220px;
- }
  .table_qlink1 {
   border-left: none;
  }
@@ -212,7 +262,36 @@ body{
  i{
   /* width: 8px;
   height: 8px ; */
-  background-color: #FFFACD;
+  
   background-size: cover;
-  border-radius: 50%;
+  
  }
+
+ i:hover{
+  transition: all 2s;
+  background-color: #FFFACD;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+
+   /*index form buttons css */
+/* #submit_button_index{
+  position: relative;
+  background-color: #0ff;
+  border: 2px solid #0ff;
+}
+
+#submit_button_index::before{
+  content: "";
+  position: absolute;
+  transform: scaleX(0);
+  transform-origin: left;
+  z-index: -1;
+}
+#submit_button_index:hover::before{
+  transform: scaleX(1);
+}
+#submit_button_index:hover{
+  background-color: #141414;
+} */
+
